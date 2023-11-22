@@ -3,6 +3,7 @@ import argparse
 import sys
 import os
 
+
 def read_input(inp_path: str) -> list:
     with open(inp_path, 'r') as f:
         inp = f.read().splitlines()
