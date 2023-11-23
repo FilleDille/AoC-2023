@@ -1,30 +1,33 @@
-from src import *
 import argparse
-import sys
 import os
+import sys
+
+from src import *
 
 
 def read_input(inp_path: str) -> list:
-    with open(inp_path, 'r') as f:
+    with open(inp_path) as f:
         inp = f.read().splitlines()
-        f.close()
-
         return inp
 
 
 if __name__ == '__main__':
     ############################ v DEBUG BLOCK v ############################
 
-    #input_path = os.path.join(script_dir, 'input', 'input.txt')
-    #input_raw = read_input(input_path)
-    #result = part_1.run(input_raw)
-    #sys.exit()
+    # input_path = os.path.join(script_dir, 'input', 'input.txt')
+    # input_raw = read_input(input_path)
+    # result = part_1.run(input_raw)
+    # sys.exit()
 
     ############################ ^ DEBUG BLOCK ^ ############################
 
     parser = argparse.ArgumentParser(description='Advent of code 2023')
-    parser.add_argument('part', type=int, help='Provide the part you want to run - either 1 or 2')
-    parser.add_argument('--test', type=int, help='Set flag to run the test-file against provided input')
+    parser.add_argument(
+        'part', type=int, help='Provide the part you want to run - either 1 or 2'
+    )
+    parser.add_argument(
+        '--test', type=int, help='Set flag to run the test-file against provided input'
+    )
     args = parser.parse_args()
 
     if args.part is None:
