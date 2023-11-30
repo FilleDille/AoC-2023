@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
     if is_test:
         print(f'Asserting {assert_value}')
-        assert result == assert_value
+        assert result == assert_value, f'Expected {assert_value} but got {result}'
         print('Assertion successful')
     else:
         print(result)
