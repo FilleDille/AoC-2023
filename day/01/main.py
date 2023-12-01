@@ -14,11 +14,11 @@ def read_input(inp_path: str) -> list:
 if __name__ == '__main__':
     ############################ v DEBUG BLOCK v ############################
 
-    # script_dir = os.path.dirname(os.path.abspath(__file__))
-    # input_path = os.path.join(script_dir, 'input', 'test.txt')
-    # input_raw = read_input(input_path)
-    # result = part_1.run(input_raw)
-    # sys.exit()
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join(script_dir, 'input', 'input.txt')
+    input_raw = read_input(input_path)
+    result = part_2.run(input_raw)
+    sys.exit()
 
     ############################ ^ DEBUG BLOCK ^ ############################
 
