@@ -46,3 +46,7 @@ if [ ! -e "day/$day_formatted/src/__init__.py" ]; then
     cp -n "template/__init__.py" "day/$day_formatted/src/__init__.py"
 fi
 
+if [ ! -e "day/$day_formatted/src/utils.py" ]; then
+    cp -n "template/utils.py" "day/$day_formatted/src/utils.py"
+fi
+
