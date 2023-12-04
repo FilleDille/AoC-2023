@@ -1,4 +1,4 @@
-from . import utils
+from .utils import *
 
 
 def run(inp) -> int:

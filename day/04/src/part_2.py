@@ -1,21 +1,19 @@
-import re
-
-from . import utils
+from .utils import *
 
 
 def run(inp):
     card_dict: dict = {}
 
     for line in inp:
-        card_number = int(re.search(r'(\d+)\:', line).group(1))
+        card_number = get_card_number(line)
 
         if card_number in card_dict:
             card_dict[card_number] += 1
         else:
             card_dict[card_number] = 1
 
-        winning_numbers = set(re.findall('\d{1,2}', re.search(r':\s(.*?)\s\|', line).group(1)))
-        drawn_numbers = set(re.findall('\d{1,2}', re.search(r'\|\s(.*?)$', line).group(1)))
+        winning_numbers = get_winning_numbers(line)
+        drawn_numbers = get_drawn_numbers(line)
         num_right = len(winning_numbers & drawn_numbers)
 
         for num in range(card_number + 1, card_number + num_right + 1):
