@@ -16,12 +16,13 @@ if __name__ == '__main__':
     ############################ v DEBUG BLOCK v ############################
 
     # script_dir = os.path.dirname(os.path.abspath(__file__))
-    # input_path = os.path.join(script_dir, 'input', 'input.txt')
-    # t0 = time.perf_counter_ns()
+    # input_path = os.path.join(script_dir, 'input', 'test.txt')
     # input_raw = read_input(input_path)
+    # t0 = time.perf_counter()
     # result = part_2.run(input_raw)
-    # t1 = time.perf_counter_ns()
-    # print((t1-t0)/1000)
+    # print(result)
+    # t1 = time.perf_counter()
+    # print(f'{round(t1 - t0, 2)}, s')
     # sys.exit()
 
     ############################ ^ DEBUG BLOCK ^ ############################
@@ -59,11 +60,15 @@ if __name__ == '__main__':
     input_raw = read_input(input_path)
     result = None
 
+    t0 = time.perf_counter_ns()/1000000
+
     if part == 1:
         result = part_1.run(input_raw)
 
     if part == 2:
         result = part_2.run(input_raw)
+
+    t1 = time.perf_counter_ns() / 1000000
 
     if is_test:
         print(f'Asserting {assert_value}')
@@ -71,3 +76,4 @@ if __name__ == '__main__':
         print('Assertion successful')
     else:
         print(result)
+        print(f'{round(t1- t0, 2)}, ms')
