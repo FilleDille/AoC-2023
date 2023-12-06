@@ -9,7 +9,7 @@ def run(inp):
     for i in range(len(time_list)):
         time_array = np.arange(time_list[i] + 1)
         time_left_array = time_list[i] - time_array
-        distance_traveled_array =  time_array * time_left_array
+        distance_traveled_array = time_array * time_left_array
         ways_to_win *= np.count_nonzero(distance_traveled_array > distance_record_list[i])
 
     return ways_to_win

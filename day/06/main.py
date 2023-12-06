@@ -19,6 +19,7 @@ if __name__ == '__main__':
     # input_path = os.path.join(script_dir, 'input', 'test.txt')
     # input_raw = read_input(input_path)
     # result = part_1.run(input_raw)
+    # print(result)
     # sys.exit()
 
     ############################ ^ DEBUG BLOCK ^ ############################
